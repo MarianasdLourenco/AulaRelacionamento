@@ -1,0 +1,38 @@
+﻿@model AulaRelacionamento.Models.MeusFavoritosModel
+
+<div class=" row">
+    <div class="col-6">
+        <ul class="list-group">
+
+            @foreach (var item in Model.favoritos)
+
+            {
+
+                <li class="list-group-item">
+                    @item.filme.Titulo -
+                    <a class="btn btn-success"
+                       href="/UsuariosFilmes/RemoverFavorito/@item.Id">
+                        Remover Filmes
+
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+
+            @foreach (var item in Model.todosFilmes)
+
+            {
+                <li class="list-group-item">
+                    @item.Titulo -
+                    <a class="btn btn-success"
+                       href="/UsuariosFilmes/Favoritar/@Model.UsuarioId/@item.Id">
+                        Favoritar
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
